@@ -18,9 +18,15 @@ function BooksPage() {
   return (
     <div>
       <h2>Books</h2>
-      <Navigation /> {/* Display navigation links */}
-      <BookList books={books} onDeleteBook={handleDeleteBook} /> {/* Display book list */}
-      <BookForm onAddBook={handleAddBook} /> {/* Display book form */}
+      <Navigation />
+      {' '}
+      {/* Display navigation links */}
+      <BookList books={books} onDeleteBook={handleDeleteBook} />
+      {' '}
+      {/* Display book list */}
+      <BookForm onAddBook={handleAddBook} />
+      {' '}
+      {/* Display book form */}
     </div>
   );
 }
