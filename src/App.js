@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import BooksPage from './pages/BooksPage';
-import CategoriesPage from './pages/CategoriesPage';
+import BooksPage from './components/BooksPage';
+import CategoriesPage from './components/CategoriesPage';
 import './App.css';
 
 function App() {
