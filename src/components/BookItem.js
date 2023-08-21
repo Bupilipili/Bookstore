@@ -1,19 +1,13 @@
 import React from 'react';
 
-function BookItem({ book, onDeleteBook }) {
+const BookItem = ({ book }) => {
   return (
-    <li>
-      <p>
-        Title:
-        {book.title}
-      </p>
-      <p>
-        Author:
-        {book.author}
-      </p>
-      <button onClick={() => onDeleteBook(book.id)}>Delete</button>
-    </li>
+    <div>
+      <p>Title: {book.title}</p>
+      <p>Author: {book.author}</p>
+      <p>Category: {book.category}</p>
+    </div>
   );
-}
+};
 
 export default BookItem;
