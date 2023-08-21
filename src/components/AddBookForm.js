@@ -27,13 +27,13 @@ function AddBookForm() {
         type="text"
         placeholder="Title"
         value={title}
-        onChange={e => setTitle(e.target.value)}
+        onChange={(e) => setTitle(e.target.value)}
       />
       <input
         type="text"
         placeholder="Author"
         value={author}
-        onChange={e => setAuthor(e.target.value)}
+        onChange={(e) => setAuthor(e.target.value)}
       />
       <button onClick={handleAddBook}>Add Book</button>
     </div>
