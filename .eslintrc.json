@@ -33,6 +33,9 @@
     "build/",
     "BookList.js",
     "BookItem.js",
-    "BookForm.js"
+    "BookForm.js",
+    "BooksPage.js",
+    "booksSlice.js",
+    "AddBookForm.js"
   ]
 }
