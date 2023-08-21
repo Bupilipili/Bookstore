@@ -35,6 +35,7 @@
     "BookItem.js",
     "BookForm.js",
     "BooksPage.js",
-    "booksSlice.js"
+    "booksSlice.js",
+    "AddBookForm.js"
   ]
 }
