@@ -1,10 +1,9 @@
-
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { checkStatus } from '../redux/categories/categoriesSlice';
 
 function CategoriesPage() {
-  const categories = useSelector(state => state.categories.categories);
+  const categories = useSelector((state) => state.categories.categories);
   const dispatch = useDispatch();
 
   useEffect(() => {
