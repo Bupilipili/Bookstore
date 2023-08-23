@@ -1,39 +1,33 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { fetchBooks, addBook, removeBook } from '../redux/books/booksSlice'; // Import the actions
-import BookItem from './BookItem';
+import { fetchBooksAsync } from '../redux/books/booksSlice'; // Adjust import path as needed
+import BookItem from './BookItem'; // Import the BookItem component
 import AddBookForm from './AddBookForm'; 
 
 function BooksPage() {
-  const books = useSelector((state) => state.books);
   const dispatch = useDispatch();
+  const app_id = 'ktMaPkuUjcdRtsd1h31t'; // actual app_id
+  const books = useSelector(state => state.books.books);
+  const status = useSelector(state => state.books.status);
 
   useEffect(() => {
-    dispatch(fetchBooks()); // Fetch books on component mount
-  }, [dispatch]);
-
-  const handleAddBook = () => {
-    const newBook = {
-      // ... create a new book object ...
-    };
-    dispatch(addBook(newBook)); // Dispatch the addBook action
-  };
-
-  const handleRemoveBook = (bookId) => {
-    dispatch(removeBook(bookId)); // Dispatch the removeBook action
-  };
+    dispatch(fetchBooksAsync(app_id)); // Fetch books from API using the actual app_id
+  }, []);
 
   return (
     <div>
-      <ul>
-        {books.map((book) => (
-          <BookItem key={book.item_id} book={book} onDeleteBook={() => handleRemoveBook(book.item_id)} />
-        ))}
-      </ul>
-      <AddBookForm/ >
-      {/* ... your add book form ... */}
+     <p>{ status }</p>
+      {
+        books.map((book, index) => (
+          <div key={index}>
+            <BookItem book={book} />
+          </div>
+        ))
+      }
+      <AddBookForm />
     </div>
   );
+  
 }
 
 export default BooksPage;
