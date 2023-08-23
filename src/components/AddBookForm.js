@@ -1,25 +1,29 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
-import { addBook } from '../redux/books/booksSlice'; // Adjust the import path
+import { addBookAsync } from '../redux/books/booksSlice'; // Adjust the import path
 
 function AddBookForm() {
   const dispatch = useDispatch();
+  const app_id = 'ktMaPkuUjcdRtsd1h31t'; // Your actual app_id
   const [title, setTitle] = useState('');
   const [author, setAuthor] = useState('');
 
-  const handleAddBook = () => {
+  const handleAddBook = async () => {
+    console.log('Adding book...');
     const newBook = {
-      item_id: uuidv4(), // Use a unique ID generator
+      item_id: uuidv4(),
       title,
       author,
-      category: 'Fiction', // Adjust category as needed
+      category: 'Fiction',
     };
-    dispatch(addBook(newBook));
+    console.log('New Book:', newBook);
+    await dispatch(addBookAsync({ app_id, book: newBook }));
+    console.log('Book added successfully');
     setTitle('');
     setAuthor('');
   };
-
+  
   return (
     <div>
       <h2>Add New Book</h2>
