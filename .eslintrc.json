@@ -37,6 +37,7 @@
     "BooksPage.js",
     "booksSlice.js",
     "AddBookForm.js",
-    "CategoriesPage.js"
+    "CategoriesPage.js",
+    "Navigation.js"
   ]
 }
