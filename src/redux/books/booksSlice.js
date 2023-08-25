@@ -3,7 +3,7 @@ import axios from 'axios';
 
 const initialState = {
   books: [], // Initialize with an empty array
-  status: '',
+  isLoading: false,
   error: null,
 };
 
@@ -49,15 +49,18 @@ const booksSlice = createSlice({
         }
       })
       .addCase(addBookAsync.fulfilled, (state, action) => {
-        // You can handle additional logic here if needed
         state.books = [...state.books,action.payload];
+        state.isLoading = false;
+      })
+      .addCase(addBookAsync.pending, (state) => {
+        state.isLoading = true;
       })
       .addCase(removeBookAsync.fulfilled, (state, action) => {
-        state.status = "Done";
+        state.isLoading = false;
         state.books = state.books.filter((book) => book.item_id !== action.payload);
       })
       .addCase(removeBookAsync.pending, (state) => {
-        state.status = "Loading...";
+        state.isLoading = true;
       });
   },
 });
