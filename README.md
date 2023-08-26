@@ -30,14 +30,14 @@
 
 # 📖 bookstore <a name="about-project"></a>
 
-**bookstore** is an application that allows users to add books. 
+**bookstore** is a dynamic web application designed to simplify book management for users. It leverages an external API to seamlessly handle the process of adding and removing books. With an intuitive interface, users can effortlessly view their collection, add new books by inputting titles and authors, and remove books as desired. By utilizing the API, Bookstore optimizes data management, ensuring a smooth and organized experience for book enthusiasts.
 
 ## 🛠 Built With <a name="built-with"></a>
 
 ### Tech Stack <a name="tech-stack"></a>
  
 - **[React]**
-- **[Webpack]**
+- **[Redux]**
 - **[Jest]**
 
 ### Key Features <a name="key-features"></a>
