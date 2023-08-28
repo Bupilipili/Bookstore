@@ -38,7 +38,7 @@
  
 - **[React]**
 - **[Redux]**
-- **[Jest]**
+- **[CSS]**
 
 ### Key Features <a name="key-features"></a>
 
